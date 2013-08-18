@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head1" runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Styles/Site.css" rel="stylesheet" />
+    <link href="~/Styles/bootstrap.css" rel="stylesheet" />
+    <link href="~/Styles/bootstrap-responsive.css" rel="stylesheet" />
+    <asp:PlaceHolder ID="PlaceHolder1" runat="server">           
+        <script src="Scripts/jquery-1.7.2.min.js"></script>
+        <script src="Scripts/checkbox.js"></script>
+        <script src="Scripts/modernizr-2.5.3-respond-1.1.0.min.js"></script>
+        <script src="Scripts/bootstrap.js"></script>
+    </asp:PlaceHolder>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <header>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Your Site Name Here</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="messaging.aspx">Home</a></li>
+              <li><asp:LinkButton runat="server" OnClick="SignOut_Click" Text="Sign Out"/></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    </header>
+    <div class="content-container container-fluid">
+        <div class="span4" style="background-color: #7ac0da; text-align: center; margin-top:11px;">
+            <img src="Images/Mail%20Icon.png" style="margin: auto;"/><br />
+            <asp:ContentPlaceHolder runat="server" ID="Contacts" />     
+        </div>
+        <div class="span8">
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+        </div>
+    </div>
+    </form>
+</body>
+</html>
